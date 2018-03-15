@@ -1,0 +1,11 @@
+GET /team_challenge_matrix.js HTTP/1.1
+Host: challenges.ictf2011.info
+User-Agent: Mozilla/5.0 (X11; U; Linux x86_64; en-US; rv:1.9.2.24) Gecko/20111107 Ubuntu/10.04 (lucid) Firefox/3.6.24
+Accept: */*
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip,deflate
+Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+Keep-Alive: 115
+Connection: keep-alive
+Referer: http://challenges.ictf2011.info/team_challenge_matrix
+

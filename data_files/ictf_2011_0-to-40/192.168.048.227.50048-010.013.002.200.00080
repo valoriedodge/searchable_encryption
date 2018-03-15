@@ -1,0 +1,10 @@
+GET /challenges.js HTTP/1.1
+Host: challenges.ictf2011.info
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/535.5 (KHTML, like Gecko) Chrome/16.0.891.0 Safari/535.5
+Accept: */*
+Referer: http://challenges.ictf2011.info/
+Accept-Encoding: gzip,deflate,sdch
+Accept-Language: en-US,en;q=0.8,it;q=0.6
+Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.3
+

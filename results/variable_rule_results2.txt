@@ -1,0 +1,160 @@
+*******************************************************************
+Token Size 4 
+The number of rejected rules: 4 
+
+nytimes.txt
+The number of matched data characters: 133931 
+51.90 
+
+cnn.txt
+The number of matched data characters: 72979 
+41.25 
+
+wsj.txt
+The number of matched data characters: 359996 
+34.21 
+
+*******************************************************************
+Token Size 5 
+The number of rejected rules: 11 
+
+nytimes.txt
+The number of matched data characters: 81512 
+31.59 
+
+cnn.txt
+The number of matched data characters: 37856 
+21.40 
+
+wsj.txt
+The number of matched data characters: 189541 
+18.01 
+
+*******************************************************************
+Token Size 6 
+The number of rejected rules: 11 
+
+nytimes.txt
+The number of matched data characters: 54823 
+21.24 
+
+cnn.txt
+The number of matched data characters: 25084 
+14.18 
+
+wsj.txt
+The number of matched data characters: 131818 
+12.53 
+
+*******************************************************************
+Token Size 7 
+The number of rejected rules: 11 
+
+nytimes.txt
+The number of matched data characters: 47409 
+18.37 
+
+cnn.txt
+The number of matched data characters: 15125 
+8.55 
+
+wsj.txt
+The number of matched data characters: 70380 
+6.69 
+
+*******************************************************************
+Token Size 8 
+The number of rejected rules: 11 
+
+nytimes.txt
+The number of matched data characters: 43033 
+16.68 
+
+cnn.txt
+The number of matched data characters: 9812 
+5.55 
+
+wsj.txt
+The number of matched data characters: 70394 
+6.69 
+
+*******************************************************************
+Token Size 9 
+The number of rejected rules: 11 
+
+nytimes.txt
+The number of matched data characters: 27224 
+10.55 
+
+cnn.txt
+The number of matched data characters: 12071 
+6.82 
+
+wsj.txt
+The number of matched data characters: 54104 
+5.14 
+
+*******************************************************************
+Token Size 10 
+The number of rejected rules: 11 
+
+nytimes.txt
+The number of matched data characters: 26763 
+10.37 
+
+cnn.txt
+The number of matched data characters: 9881 
+5.59 
+
+wsj.txt
+The number of matched data characters: 47544 
+4.52 
+
+*******************************************************************
+Token Size 11 
+The number of rejected rules: 11 
+
+nytimes.txt
+The number of matched data characters: 26442 
+10.25 
+
+cnn.txt
+The number of matched data characters: 7538 
+4.26 
+
+wsj.txt
+The number of matched data characters: 36737 
+3.49 
+
+*******************************************************************
+Token Size 12 
+The number of rejected rules: 11 
+
+nytimes.txt
+The number of matched data characters: 32022 
+12.41 
+
+cnn.txt
+The number of matched data characters: 11155 
+6.31 
+
+wsj.txt
+The number of matched data characters: 47756 
+4.54 
+
+*******************************************************************
+Token Size 13 
+The number of rejected rules: 11 
+
+nytimes.txt
+The number of matched data characters: 32120 
+12.45 
+
+cnn.txt
+The number of matched data characters: 11306 
+6.39 
+
+wsj.txt
+The number of matched data characters: 47008 
+4.47 
+

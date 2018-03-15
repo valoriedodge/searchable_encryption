@@ -1,0 +1,6 @@
+GET /GoogleInternetAuthority/GoogleInternetAuthority.crl HTTP/1.1
+Host: www.gstatic.com
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/535.2 (KHTML, like Gecko) Chrome/15.0.874.121 Safari/535.2
+Accept-Encoding: gzip,deflate,sdch
+

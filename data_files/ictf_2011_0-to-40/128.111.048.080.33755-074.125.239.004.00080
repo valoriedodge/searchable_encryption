@@ -1,0 +1,14 @@
+POST /safebrowsing/downloads?client=googlechrome&appver=15.0.874.121&pver=2.2&wrkey=AKEgNiulRCenq8eofMdTRUIzOwMYEJ4ZlRDblsN986QYRtq8P_mPKNK2x_GA635Q9M75jettPzYT1kL8LTe2oLCn0XDqlm1HJw== HTTP/1.1
+Host: safebrowsing.clients.google.com
+Connection: keep-alive
+Content-Length: 227
+Content-Type: text/plain
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/535.2 (KHTML, like Gecko) Chrome/15.0.874.121 Safari/535.2
+Accept-Encoding: gzip,deflate,sdch
+Cookie: PREF=ID=aa645e7d0ce1b0a0:TM=1322841986:LM=1322841986:S=QNZpoLQdP2O6A9Pn
+
+goog-malware-shavar;a:53761-58943:s:64321-68369:mac
+goog-phish-shavar;a:170241-182496:s:82400-86870:mac
+goog-badbinurl-shavar;a:137-3242:s:61-2888:mac
+goog-badbin-digestvar;a:19-2687:s:3-861:mac
+goog-csdwhite-sha256;a:1-20:mac

@@ -1,0 +1,1506 @@
+
+	<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" type="text/javascript"></script>
+<script src="./js/highcharts.js" type="text/javascript"></script>
+
+<script>
+<!--
+
+/*
+Auto Refresh Page with Time script
+By JavaScript Kit (javascriptkit.com)
+Over 200+ free scripts here!
+*/
+
+//enter refresh time in "minutes:seconds" Minutes should range from 0 to inifinity. Seconds should range from 0 to 59
+var limit="2:0 "
+
+if (document.images){
+var parselimit=limit.split(":")
+parselimit=parselimit[0]*60+parselimit[1]*1
+}
+function beginrefresh(){
+if (!document.images)
+return
+if (parselimit==1)
+window.location.reload()
+else{ 
+parselimit-=1
+curmin=Math.floor(parselimit/60)
+cursec=parselimit%60
+if (curmin!=0)
+curtime=curmin+" minutes and "+cursec+" seconds left until page refresh!"
+else
+curtime=cursec+" seconds left until page refresh!"
+window.status=curtime
+setTimeout("beginrefresh()",1000)
+}
+}
+
+window.onload=beginrefresh
+//-->
+</script>
+
+
+
+
+<script type="text/javascript" >
+ var chart1; // globally available
+$(document).ready(function() {
+teamp = []
+teamt = []
+teamm = []
+teamn = []
+
+teamp["stoned_brook"] = [0]
+ teamt["stoned_brook"] = ["10:49:00"]
+ teamm ["stoned_brook"] = [3600]
+ teamn["stoned_brook"] = "Stoned Brook"
+
+
+teamp["smokedchicken"] = [1200]
+ teamt["smokedchicken"] = ["10:49:00"]
+ teamm ["smokedchicken"] = [3080]
+ teamn["smokedchicken"] = "SmokedChicken"
+
+
+teamp["faust___fau_security_team"] = [8700]
+ teamt["faust___fau_security_team"] = ["10:49:00"]
+ teamm ["faust___fau_security_team"] = [1507]
+ teamn["faust___fau_security_team"] = "FAUST - FAU Security Team"
+
+
+teamp["syper"] = [0]
+ teamt["syper"] = ["10:49:00"]
+ teamm ["syper"] = [1741]
+ teamn["syper"] = "SYPER"
+
+
+teamp["rpisec"] = [300]
+ teamt["rpisec"] = ["10:49:00"]
+ teamm ["rpisec"] = [2750]
+ teamn["rpisec"] = "RPISEC"
+
+
+teamp["_censored_"] = [0]
+ teamt["_censored_"] = ["10:49:00"]
+ teamm ["_censored_"] = [1000]
+ teamn["_censored_"] = "[censored]"
+
+
+teamp["m4d_c0wz"] = [5300]
+ teamt["m4d_c0wz"] = ["10:49:00"]
+ teamm ["m4d_c0wz"] = [825]
+ teamn["m4d_c0wz"] = "m4d c0wZ"
+
+
+teamp["tower_of_hanoi"] = [0]
+ teamt["tower_of_hanoi"] = ["10:49:00"]
+ teamm ["tower_of_hanoi"] = [4242]
+ teamn["tower_of_hanoi"] = "Tower Of Hanoi"
+
+
+teamp["take_over_the_world"] = [-3300]
+ teamt["take_over_the_world"] = ["10:49:00"]
+ teamm ["take_over_the_world"] = [323]
+ teamn["take_over_the_world"] = "Take Over The World"
+
+
+teamp["tr0llf4ce_pwnz_u"] = [4200]
+ teamt["tr0llf4ce_pwnz_u"] = ["10:49:00"]
+ teamm ["tr0llf4ce_pwnz_u"] = [676]
+ teamn["tr0llf4ce_pwnz_u"] = "Tr0llf4ce Pwnz U"
+
+
+teamp["wizardsofdos"] = [1200]
+ teamt["wizardsofdos"] = ["10:49:00"]
+ teamm ["wizardsofdos"] = [1624]
+ teamn["wizardsofdos"] = "WizardsOfDos"
+
+
+teamp["plaid_parliament_of_pwning"] = [24000]
+ teamt["plaid_parliament_of_pwning"] = ["10:49:00"]
+ teamm ["plaid_parliament_of_pwning"] = [4140]
+ teamn["plaid_parliament_of_pwning"] = "Plaid Parliament of Pwning"
+
+
+teamp["h4ck1nb3rg"] = [5400]
+ teamt["h4ck1nb3rg"] = ["10:49:00"]
+ teamm ["h4ck1nb3rg"] = [500]
+ teamn["h4ck1nb3rg"] = "h4ck1nb3rg"
+
+
+teamp["hackus_udes"] = [0]
+ teamt["hackus_udes"] = ["10:49:00"]
+ teamm ["hackus_udes"] = [1400]
+ teamn["hackus_udes"] = "Hackus-UDeS"
+
+
+teamp["pwndevils"] = [0]
+ teamt["pwndevils"] = ["10:49:00"]
+ teamm ["pwndevils"] = [2700]
+ teamn["pwndevils"] = "PwnDevils"
+
+
+teamp["c00kies_venice"] = [12000]
+ teamt["c00kies_venice"] = ["10:49:00"]
+ teamm ["c00kies_venice"] = [2250]
+ teamn["c00kies_venice"] = "c00kies@venice"
+
+
+teamp["cheddar_horsemen"] = [0]
+ teamt["cheddar_horsemen"] = ["10:49:00"]
+ teamm ["cheddar_horsemen"] = [1515]
+ teamn["cheddar_horsemen"] = "Cheddar Horsemen"
+
+
+teamp["thc_twente_hacker_club"] = [0]
+ teamt["thc_twente_hacker_club"] = ["10:49:00"]
+ teamm ["thc_twente_hacker_club"] = [3200]
+ teamn["thc_twente_hacker_club"] = "THC - Twente Hacker Club"
+
+
+teamp["enoflag"] = [5300]
+ teamt["enoflag"] = ["10:49:00"]
+ teamm ["enoflag"] = [629]
+ teamn["enoflag"] = "ENOFLAG"
+
+
+teamp["ulm_security_sparrows"] = [6900]
+ teamt["ulm_security_sparrows"] = ["10:49:00"]
+ teamm ["ulm_security_sparrows"] = [3500]
+ teamn["ulm_security_sparrows"] = "Ulm Security Sparrows"
+
+
+teamp["usafa_cwc"] = [6300]
+ teamt["usafa_cwc"] = ["10:49:00"]
+ teamm ["usafa_cwc"] = [1901]
+ teamn["usafa_cwc"] = "USAFA CWC"
+
+
+teamp["galvao"] = [0]
+ teamt["galvao"] = ["10:49:00"]
+ teamm ["galvao"] = [975]
+ teamn["galvao"] = "Galvao"
+
+
+teamp["hackmen"] = [0]
+ teamt["hackmen"] = ["10:49:00"]
+ teamm ["hackmen"] = [2000]
+ teamn["hackmen"] = "hackmen"
+
+
+teamp["ufologists"] = [0]
+ teamt["ufologists"] = ["10:49:00"]
+ teamm ["ufologists"] = [2780]
+ teamn["ufologists"] = "UFOlogists"
+
+
+teamp["0ldeur0pe"] = [14100]
+ teamt["0ldeur0pe"] = ["10:49:00"]
+ teamm ["0ldeur0pe"] = [2254]
+ teamn["0ldeur0pe"] = "0ldEur0pe"
+
+
+teamp["le_herp_derp"] = [0]
+ teamt["le_herp_derp"] = ["10:49:00"]
+ teamm ["le_herp_derp"] = [1627]
+ teamn["le_herp_derp"] = "le herp derp"
+
+
+teamp["blue_lotus"] = [0]
+ teamt["blue_lotus"] = ["10:49:00"]
+ teamm ["blue_lotus"] = [3210]
+ teamn["blue_lotus"] = "blue-lotus"
+
+
+teamp["select_random_name"] = [1200]
+ teamt["select_random_name"] = ["10:49:00"]
+ teamm ["select_random_name"] = [548]
+ teamn["select_random_name"] = "select random name"
+
+
+teamp["leet_more"] = [0]
+ teamt["leet_more"] = ["10:49:00"]
+ teamm ["leet_more"] = [644]
+ teamn["leet_more"] = "Leet More"
+
+
+teamp["list"] = [7200]
+ teamt["list"] = ["10:49:00"]
+ teamm ["list"] = [779]
+ teamn["list"] = "LIST"
+
+
+teamp["pwnyexpress"] = [7500]
+ teamt["pwnyexpress"] = ["10:49:00"]
+ teamm ["pwnyexpress"] = [1028]
+ teamn["pwnyexpress"] = "pwnyexpress"
+
+
+teamp["fluxfingers"] = [3000]
+ teamt["fluxfingers"] = ["10:49:00"]
+ teamm ["fluxfingers"] = [2573]
+ teamn["fluxfingers"] = "FluxFingers"
+
+
+teamp["uc_lions"] = [0]
+ teamt["uc_lions"] = ["10:49:00"]
+ teamm ["uc_lions"] = [2502]
+ teamn["uc_lions"] = "UC Lions"
+
+
+teamp["defender_of_the_flag"] = [3600]
+ teamt["defender_of_the_flag"] = ["10:49:00"]
+ teamm ["defender_of_the_flag"] = [161]
+ teamn["defender_of_the_flag"] = "Defender of the Flag"
+
+
+teamp["sibears"] = [4200]
+ teamt["sibears"] = ["10:49:00"]
+ teamm ["sibears"] = [2268]
+ teamn["sibears"] = "SiBears"
+
+
+teamp["smallbitmap"] = [0]
+ teamt["smallbitmap"] = ["10:49:00"]
+ teamm ["smallbitmap"] = [1000]
+ teamn["smallbitmap"] = "smallbitmap"
+
+
+teamp["wcsc"] = [900]
+ teamt["wcsc"] = ["10:49:00"]
+ teamm ["wcsc"] = [2128]
+ teamn["wcsc"] = "WCSC"
+
+
+teamp["chocolate_makers"] = [6500]
+ teamt["chocolate_makers"] = ["10:49:00"]
+ teamm ["chocolate_makers"] = [1090]
+ teamn["chocolate_makers"] = "Chocolate Makers"
+
+
+teamp["invar"] = [0]
+ teamt["invar"] = ["10:49:00"]
+ teamm ["invar"] = [2200]
+ teamn["invar"] = "InVaR"
+
+
+teamp["test"] = [0]
+ teamt["test"] = ["10:49:00"]
+ teamm ["test"] = [2471]
+ teamn["test"] = "I am a test team!"
+
+
+teamp["wildride"] = [0]
+ teamt["wildride"] = ["10:49:00"]
+ teamm ["wildride"] = [2900]
+ teamn["wildride"] = "WildRide"
+
+
+teamp["hackerdom"] = [3900]
+ teamt["hackerdom"] = ["10:49:00"]
+ teamm ["hackerdom"] = [1129]
+ teamn["hackerdom"] = "Hackerdom"
+
+
+teamp["synners"] = [0]
+ teamt["synners"] = ["10:49:00"]
+ teamm ["synners"] = [1900]
+ teamn["synners"] = "SYNners"
+
+
+teamp["vlgu"] = [0, 0]
+ teamt["vlgu"] = ["17:17:44", "17:17:45"]
+ teamm ["vlgu"] = [2700, 2900]
+ teamn["vlgu"] = "VLGU"
+
+
+teamp["the_maple_menace"] = [300]
+ teamt["the_maple_menace"] = ["10:49:00"]
+ teamm ["the_maple_menace"] = [3390]
+ teamn["the_maple_menace"] = "The Maple Menace"
+
+
+teamp["in23canation"] = [0]
+ teamt["in23canation"] = ["10:49:00"]
+ teamm ["in23canation"] = [1123]
+ teamn["in23canation"] = "in23canation"
+
+
+teamp["bushwhackers"] = [600]
+ teamt["bushwhackers"] = ["10:49:00"]
+ teamm ["bushwhackers"] = [2900]
+ teamn["bushwhackers"] = "Bushwhackers"
+
+
+teamp["kernelsanders"] = [0]
+ teamt["kernelsanders"] = ["10:49:00"]
+ teamm ["kernelsanders"] = [2900]
+ teamn["kernelsanders"] = "kernelsanders"
+
+
+teamp["red_cops"] = [300]
+ teamt["red_cops"] = ["10:49:00"]
+ teamm ["red_cops"] = [1531]
+ teamn["red_cops"] = "Red Cops"
+
+
+teamp["bi0s"] = [0]
+ teamt["bi0s"] = ["10:49:00"]
+ teamm ["bi0s"] = [2100]
+ teamn["bi0s"] = "bi0s"
+
+
+teamp["magic_hat"] = [0]
+ teamt["magic_hat"] = ["10:49:00"]
+ teamm ["magic_hat"] = [2800]
+ teamn["magic_hat"] = "Magic Hat"
+
+
+teamp["funny_h_xors"] = [300]
+ teamt["funny_h_xors"] = ["10:49:00"]
+ teamm ["funny_h_xors"] = [2047]
+ teamn["funny_h_xors"] = "funny h@Xors"
+
+
+teamp["secd"] = [900]
+ teamt["secd"] = ["10:49:00"]
+ teamm ["secd"] = [3802]
+ teamn["secd"] = "secD"
+
+
+teamp["save_teh_kids"] = [2700]
+ teamt["save_teh_kids"] = ["10:49:00"]
+ teamm ["save_teh_kids"] = [2100]
+ teamn["save_teh_kids"] = "save teh kids"
+
+
+teamp["schwarzwalder_kriptsciddies"] = [4200]
+ teamt["schwarzwalder_kriptsciddies"] = ["10:49:00"]
+ teamm ["schwarzwalder_kriptsciddies"] = [2146]
+ teamn["schwarzwalder_kriptsciddies"] = "Schwarzwalder KriptSciddies"
+
+
+teamp["we_0wn_y0u"] = [6600]
+ teamt["we_0wn_y0u"] = ["10:49:00"]
+ teamm ["we_0wn_y0u"] = [2305]
+ teamn["we_0wn_y0u"] = "We_0wn_Y0u"
+
+
+teamp["nibbles"] = [4500]
+ teamt["nibbles"] = ["10:49:00"]
+ teamm ["nibbles"] = [1900]
+ teamn["nibbles"] = "Nibbles"
+
+
+teamp["keva"] = [-900]
+ teamt["keva"] = ["10:49:00"]
+ teamm ["keva"] = [1810]
+ teamn["keva"] = "KEVA"
+
+
+teamp["f0gd0gs"] = [0]
+ teamt["f0gd0gs"] = ["10:49:00"]
+ teamm ["f0gd0gs"] = [1744]
+ teamn["f0gd0gs"] = "f0gd0gs"
+
+
+teamp["gn00bz"] = [0]
+ teamt["gn00bz"] = ["10:49:00"]
+ teamm ["gn00bz"] = [4200]
+ teamn["gn00bz"] = "gn00bz"
+
+
+teamp["scdt"] = [0]
+ teamt["scdt"] = ["10:49:00"]
+ teamm ["scdt"] = [2300]
+ teamn["scdt"] = "SCDT"
+
+
+teamp["hack_club"] = [0]
+ teamt["hack_club"] = ["10:49:00"]
+ teamm ["hack_club"] = [1000]
+ teamn["hack_club"] = "Hack Club"
+
+
+teamp["graham_s_crackers"] = [0]
+ teamt["graham_s_crackers"] = ["10:49:00"]
+ teamm ["graham_s_crackers"] = [2020]
+ teamn["graham_s_crackers"] = "Graham`s Crackers"
+
+
+teamp["0x909090"] = [0]
+ teamt["0x909090"] = ["10:49:00"]
+ teamm ["0x909090"] = [1050]
+ teamn["0x909090"] = "0x909090"
+
+
+teamp["wildcats"] = [0]
+ teamt["wildcats"] = ["10:49:00"]
+ teamm ["wildcats"] = [400]
+ teamn["wildcats"] = "Wildcats"
+
+
+teamp["49sd"] = [0]
+ teamt["49sd"] = ["10:49:00"]
+ teamm ["49sd"] = [1950]
+ teamn["49sd"] = "49SD"
+
+
+teamp["cissp_groupies"] = [8200]
+ teamt["cissp_groupies"] = ["10:49:00"]
+ teamm ["cissp_groupies"] = [1278]
+ teamn["cissp_groupies"] = "CISSP Groupies"
+
+
+teamp["cinsects"] = [12000]
+ teamt["cinsects"] = ["10:49:00"]
+ teamm ["cinsects"] = [1700]
+ teamn["cinsects"] = "CInsects"
+
+
+teamp["peterpen"] = [0]
+ teamt["peterpen"] = ["10:49:00"]
+ teamm ["peterpen"] = [300]
+ teamn["peterpen"] = "PeterPEN"
+
+
+teamp["brooklynt_overflow"] = [600]
+ teamt["brooklynt_overflow"] = ["10:49:00"]
+ teamm ["brooklynt_overflow"] = [2183]
+ teamn["brooklynt_overflow"] = "Brooklynt Overflow"
+
+
+teamp["bkitsek"] = [0]
+ teamt["bkitsek"] = ["10:49:00"]
+ teamm ["bkitsek"] = [1000]
+ teamn["bkitsek"] = "Bkitsek"
+
+
+teamp["squareroots"] = [2100]
+ teamt["squareroots"] = ["10:49:00"]
+ teamm ["squareroots"] = [1330]
+ teamn["squareroots"] = "squareroots"
+
+
+teamp["int80"] = [0]
+ teamt["int80"] = ["10:49:00"]
+ teamm ["int80"] = [3480]
+ teamn["int80"] = "int80"
+
+
+
+
+});
+
+function show_graph(team)
+{
+chart = new Highcharts.Chart({
+      chart: {
+         renderTo: 'container',
+         zoomType: 'xy'
+      },
+      title: {
+         text: 'Score/Money History for ' + teamn[team]
+      },
+      subtitle: {
+         text: 'ICTF 2010'
+      },
+      xAxis: [{
+         categories: teamt[team]
+      }],
+      yAxis: [{ // Primary yAxis
+         labels: {
+            formatter: function() {
+               return this.value +' $';
+            },
+            style: {
+               color: '#89A54E'
+            }
+         },
+         title: {
+            text: 'Money',
+            style: {
+               color: '#89A54E'
+            }
+         },
+         opposite: true
+         
+      }, { // Secondary yAxis
+         gridLineWidth: 0,
+         title: {
+            text: 'Score',
+            style: {
+               color: '#4572A7'
+            }
+         },
+         labels: {
+            formatter: function() {
+               return this.value +' pts';
+            },
+            style: {
+               color: '#4572A7'
+            }
+         }
+         
+      }],
+      tooltip: {
+         formatter: function() {
+            var unit = {
+               'Score': 'pts',
+               'Money': '$'
+            }[this.series.name];
+            
+            return ''+
+               this.x +': '+ this.y +' '+ unit;
+         }
+      },
+      legend: {
+         layout: 'vertical',
+         align: 'left',
+         x: 120,
+         verticalAlign: 'top',
+         y: 80,
+         floating: true,
+//         backgroundColor: Highcharts.theme.legendBackgroundColor || '#FFFFFF'
+      },
+      series: [{
+         name: 'Score',
+         color: '#4572A7',
+         type: 'line',
+         yAxis: 1,
+         data: teamp[team]      
+      
+      }, {
+         name: 'Money',
+         color: '#89A54E',
+         type: 'line',
+         yAxis: 0,
+         data: teamm[team]
+      }]
+   });
+<!--	alert('<div id="chart-container-'+team+'" style="width: 100%; height: 400px">'+team+'</div>') -->
+<!--	document.getElementById('graph-part').innerHTML='<div id="chart-container-'+team+'" style="width: 100%; height: 400px">'+team+'</div>' -->
+}
+
+</script>
+<style type="text/css">
+table,th,td
+{
+border:1px solid black;
+}
+.resize128h {
+width: 64px;
+height : 64px;
+}
+
+body
+{
+
+
+background-color:#131a22;
+}
+<!--
+#bg
+{
+left: 50%;
+width: 50%;
+height: 100%;
+position: fixed;
+
+}
+-->
+td
+{
+text-align:center;
+vertical-align:middle;
+}
+table
+{
+overflow: hidden;
+background-color:transparent;
+
+s}
+img
+{
+opacity:0.9;
+filter:alpha(opacity=90);
+}
+
+pB 
+{
+border:1px solid red;
+outline:green dotted thick;
+background-color:grey;
+}
+
+#score
+{
+font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+font-size: small;
+width:40%;
+border-collapse:collapse;
+background-color: transparent;
+color:white;
+
+}
+
+.table_div
+{
+	height: 100%;
+	width: 600px;
+	background-color: #131a22;
+	overflow-y: scroll;
+	float:left;
+}
+
+.graph_div
+{
+	height: 100%;
+	background-color: #131a22;
+	background-image: url('Hacker_Detected.jpg');
+	background-size: 100%;
+	background-repeat:no-repeat;
+	background-position:center;
+	overflow-y: scroll;
+}
+
+</style>
+</head>
+
+
+
+<body>
+
+
+<div class="table_div">
+<PB> <big> ICTF 2010 ScoreBoard: To get the history click on the logos</big> </PB>
+<table id="score">
+<tr>
+<th>Rank</th>
+<th>Team Name </th>
+<th>From</th>
+<th> Logo </th>
+<th>Leetness</th>
+<th>Money</th>
+
+<th>Connection Status</th>
+<th>Connection Details</th>
+
+<!-- <th rowspan=10><div style="width:100%; height:100%; margin:0px; padding:0px; left:0px; right:0px;z-index:1"><img src="Hacker_Detected.jpg" alt=""></div></th> -->
+
+</tr>
+
+
+<tr>
+<td>1</td>
+<td>Plaid Parliament of Pwning</td>
+<td>    <img src="flags/flag_usa.png" alt="United States"  title="United States"  class="resize128h"> </td> 
+
+<td> <img src="flags/team_113_flag.png"  title = "click to see history" class="resize128h" onclick="javascript:show_graph('plaid_parliament_of_pwning')"> </td>
+<td> 24000 </td>
+<td> 4140 </td>
+<td> <img src="green_light.png" class="resize128h" > </td> <td> no block in effect</td>
+
+</tr> 
+<tr>
+<td>2</td>
+<td>0ldEur0pe</td>
+<td>    <img src="flags/flag_germany.png" alt="Germany"  title="Germany"  class="resize128h"> </td> 
+
+<td> <img src="flags/team_129_flag.png"  title = "click to see history" class="resize128h" onclick="javascript:show_graph('0ldeur0pe')"> </td>
+<td> 14100 </td>
+<td> 2254 </td>
+<td> <img src="green_light.png" class="resize128h" > </td> <td> no block in effect</td>
+
+</tr> 
+<tr>
+<td>3</td>
+<td>c00kies@venice</td>
+<td>    <img src="flags/flag_italy.png" alt="Italy"  title="Italy"  class="resize128h"> </td> 
+
+<td> <img src="flags/team_114_flag.png"  title = "click to see history" class="resize128h" onclick="javascript:show_graph('c00kies_venice')"> </td>
+<td> 12000 </td>
+<td> 2250 </td>
+<td> <img src="green_light.png" class="resize128h" > </td> <td> no block in effect</td>
+
+</tr> 
+<tr>
+<td>3</td>
+<td>CInsects</td>
+<td>    <img src="flags/flag_germany.png" alt="Germany"  title="Germany"  class="resize128h"> </td> 
+
+<td> <img src="flags/team_105_flag.png"  title = "click to see history" class="resize128h" onclick="javascript:show_graph('cinsects')"> </td>
+<td> 12000 </td>
+<td> 1700 </td>
+<td> <img src="green_light.png" class="resize128h" > </td> <td> no block in effect</td>
+
+</tr> 
+<tr>
+<td>5</td>
+<td>FAUST - FAU Security Team</td>
+<td>    <img src="flags/flag_germany.png" alt="Germany"  title="Germany"  class="resize128h"> </td> 
+
+<td> <img src="flags/team_152_flag.png"  title = "click to see history" class="resize128h" onclick="javascript:show_graph('faust___fau_security_team')"> </td>
+<td> 8700 </td>
+<td> 1507 </td>
+<td> <img src="green_light.png" class="resize128h" > </td> <td> no block in effect</td>
+
+</tr> 
+<tr>
+<td>6</td>
+<td>CISSP Groupies</td>
+<td>    <img src="flags/flag_canada.png" alt="Canada"  title="Canada"  class="resize128h"> </td> 
+
+<td> <img src="flags/team_127_flag.png"  title = "click to see history" class="resize128h" onclick="javascript:show_graph('cissp_groupies')"> </td>
+<td> 8200 </td>
+<td> 1278 </td>
+<td> <img src="green_light.png" class="resize128h" > </td> <td> no block in effect</td>
+
+</tr> 
+<tr>
+<td>7</td>
+<td>pwnyexpress</td>
+<td>    <img src="flags/flag_usa.png" alt="United States"  title="United States"  class="resize128h"> </td> 
+
+<td> <img src="flags/team_142_flag.png"  title = "click to see history" class="resize128h" onclick="javascript:show_graph('pwnyexpress')"> </td>
+<td> 7500 </td>
+<td> 1028 </td>
+<td> <img src="green_light.png" class="resize128h" > </td> <td> no block in effect</td>
+
+</tr> 
+<tr>
+<td>8</td>
+<td>LIST</td>
+<td>    <img src="flags/flag_usa.png" alt="United States"  title="United States"  class="resize128h"> </td> 
+
+<td> <img src="flags/team_143_flag.png"  title = "click to see history" class="resize128h" onclick="javascript:show_graph('list')"> </td>
+<td> 7200 </td>
+<td> 779 </td>
+<td> <img src="green_light.png" class="resize128h" > </td> <td> no block in effect</td>
+
+</tr> 
+<tr>
+<td>9</td>
+<td>Ulm Security Sparrows</td>
+<td>    <img src="flags/flag_germany.png" alt="Germany"  title="Germany"  class="resize128h"> </td> 
+
+<td> <img src="flags/team_118_flag.png"  title = "click to see history" class="resize128h" onclick="javascript:show_graph('ulm_security_sparrows')"> </td>
+<td> 6900 </td>
+<td> 3500 </td>
+<td> <img src="green_light.png" class="resize128h" > </td> <td> no block in effect</td>
+
+</tr> 
+<tr>
+<td>10</td>
+<td>We_0wn_Y0u</td>
+<td>    <img src="flags/flag_austria.png" alt="Austria"  title="Austria"  class="resize128h"> </td> 
+
+<td> <img src="flags/team_112_flag.png"  title = "click to see history" class="resize128h" onclick="javascript:show_graph('we_0wn_y0u')"> </td>
+<td> 6600 </td>
+<td> 2305 </td>
+<td> <img src="green_light.png" class="resize128h" > </td> <td> no block in effect</td>
+
+</tr> 
+<tr>
+<td>11</td>
+<td>Chocolate Makers</td>
+<td>    <img src="flags/flag_italy.png" alt="Italy"  title="Italy"  class="resize128h"> </td> 
+
+<td> <img src="flags/team_123_flag.png"  title = "click to see history" class="resize128h" onclick="javascript:show_graph('chocolate_makers')"> </td>
+<td> 6500 </td>
+<td> 1090 </td>
+<td> <img src="green_light.png" class="resize128h" > </td> <td> no block in effect</td>
+
+</tr> 
+<tr>
+<td>12</td>
+<td>USAFA CWC</td>
+<td>    <img src="flags/flag_usa.png" alt="United States"  title="United States"  class="resize128h"> </td> 
+
+<td> <img src="flags/team_166_flag.png"  title = "click to see history" class="resize128h" onclick="javascript:show_graph('usafa_cwc')"> </td>
+<td> 6300 </td>
+<td> 1901 </td>
+<td> <img src="green_light.png" class="resize128h" > </td> <td> no block in effect</td>
+
+</tr> 
+<tr>
+<td>13</td>
+<td>h4ck1nb3rg</td>
+<td>    <img src="flags/flag_austria.png" alt="Austria"  title="Austria"  class="resize128h"> </td> 
+
+<td> <img src="flags/team_132_flag.png"  title = "click to see history" class="resize128h" onclick="javascript:show_graph('h4ck1nb3rg')"> </td>
+<td> 5400 </td>
+<td> 500 </td>
+<td> <img src="green_light.png" class="resize128h" > </td> <td> no block in effect</td>
+
+</tr> 
+<tr>
+<td>14</td>
+<td>m4d c0wZ</td>
+<td>    <img src="flags/flag_usa.png" alt="United States"  title="United States"  class="resize128h"> </td> 
+
+<td> <img src="flags/team_107_flag.png"  title = "click to see history" class="resize128h" onclick="javascript:show_graph('m4d_c0wz')"> </td>
+<td> 5300 </td>
+<td> 825 </td>
+<td> <img src="green_light.png" class="resize128h" > </td> <td> no block in effect</td>
+
+</tr> 
+<tr>
+<td>14</td>
+<td>ENOFLAG</td>
+<td>    <img src="flags/flag_germany.png" alt="Germany"  title="Germany"  class="resize128h"> </td> 
+
+<td> <img src="flags/team_131_flag.png"  title = "click to see history" class="resize128h" onclick="javascript:show_graph('enoflag')"> </td>
+<td> 5300 </td>
+<td> 629 </td>
+<td> <img src="green_light.png" class="resize128h" > </td> <td> no block in effect</td>
+
+</tr> 
+<tr>
+<td>16</td>
+<td>Nibbles</td>
+<td>    <img src="flags/flag_france.png" alt="France"  title="France"  class="resize128h"> </td> 
+
+<td> <img src="flags/team_155_flag.png"  title = "click to see history" class="resize128h" onclick="javascript:show_graph('nibbles')"> </td>
+<td> 4500 </td>
+<td> 1900 </td>
+<td> <img src="green_light.png" class="resize128h" > </td> <td> no block in effect</td>
+
+</tr> 
+<tr>
+<td>17</td>
+<td>SiBears</td>
+<td>    <img src="flags/flag_russia.png" alt="Russian Federation"  title="Russian Federation"  class="resize128h"> </td> 
+
+<td> <img src="flags/team_137_flag.png"  title = "click to see history" class="resize128h" onclick="javascript:show_graph('sibears')"> </td>
+<td> 4200 </td>
+<td> 2268 </td>
+<td> <img src="green_light.png" class="resize128h" > </td> <td> no block in effect</td>
+
+</tr> 
+<tr>
+<td>17</td>
+<td>Schwarzwalder KriptSciddies</td>
+<td>    <img src="flags/flag_germany.png" alt="Germany"  title="Germany"  class="resize128h"> </td> 
+
+<td> <img src="flags/team_149_flag.png"  title = "click to see history" class="resize128h" onclick="javascript:show_graph('schwarzwalder_kriptsciddies')"> </td>
+<td> 4200 </td>
+<td> 2146 </td>
+<td> <img src="green_light.png" class="resize128h" > </td> <td> no block in effect</td>
+
+</tr> 
+<tr>
+<td>17</td>
+<td>Tr0llf4ce Pwnz U</td>
+<td>    <img src="flags/flag_usa.png" alt="United States"  title="United States"  class="resize128h"> </td> 
+
+<td> <img src="flags/team_156_flag.png"  title = "click to see history" class="resize128h" onclick="javascript:show_graph('tr0llf4ce_pwnz_u')"> </td>
+<td> 4200 </td>
+<td> 676 </td>
+<td> <img src="green_light.png" class="resize128h" > </td> <td> no block in effect</td>
+
+</tr> 
+<tr>
+<td>20</td>
+<td>Hackerdom</td>
+<td>    <img src="flags/flag_russia.png" alt="Russian Federation"  title="Russian Federation"  class="resize128h"> </td> 
+
+<td> <img src="flags/team_148_flag.png"  title = "click to see history" class="resize128h" onclick="javascript:show_graph('hackerdom')"> </td>
+<td> 3900 </td>
+<td> 1129 </td>
+<td> <img src="green_light.png" class="resize128h" > </td> <td> no block in effect</td>
+
+</tr> 
+<tr>
+<td>21</td>
+<td>Defender of the Flag</td>
+<td>    <img src="flags/flag_germany.png" alt="Germany"  title="Germany"  class="resize128h"> </td> 
+
+<td> <img src="flags/team_151_flag.png"  title = "click to see history" class="resize128h" onclick="javascript:show_graph('defender_of_the_flag')"> </td>
+<td> 3600 </td>
+<td> 161 </td>
+<td> <img src="green_light.png" class="resize128h" > </td> <td> no block in effect</td>
+
+</tr> 
+<tr>
+<td>22</td>
+<td>FluxFingers</td>
+<td>    <img src="flags/flag_germany.png" alt="Germany"  title="Germany"  class="resize128h"> </td> 
+
+<td> <img src="flags/team_101_flag.png"  title = "click to see history" class="resize128h" onclick="javascript:show_graph('fluxfingers')"> </td>
+<td> 3000 </td>
+<td> 2573 </td>
+<td> <img src="green_light.png" class="resize128h" > </td> <td> no block in effect</td>
+
+</tr> 
+<tr>
+<td>23</td>
+<td>save teh kids</td>
+<td>    <img src="flags/flag_usa.png" alt="United States"  title="United States"  class="resize128h"> </td> 
+
+<td> <img src="flags/team_102_flag.png"  title = "click to see history" class="resize128h" onclick="javascript:show_graph('save_teh_kids')"> </td>
+<td> 2700 </td>
+<td> 2100 </td>
+<td> <img src="green_light.png" class="resize128h" > </td> <td> no block in effect</td>
+
+</tr> 
+<tr>
+<td>24</td>
+<td>squareroots</td>
+<td>    <img src="flags/flag_germany.png" alt="Germany"  title="Germany"  class="resize128h"> </td> 
+
+<td> <img src="flags/team_117_flag.png"  title = "click to see history" class="resize128h" onclick="javascript:show_graph('squareroots')"> </td>
+<td> 2100 </td>
+<td> 1330 </td>
+<td> <img src="green_light.png" class="resize128h" > </td> <td> no block in effect</td>
+
+</tr> 
+<tr>
+<td>25</td>
+<td>SmokedChicken</td>
+<td>    <img src="flags/flag_russia.png" alt="Russian Federation"  title="Russian Federation"  class="resize128h"> </td> 
+
+<td> <img src="flags/team_120_flag.png"  title = "click to see history" class="resize128h" onclick="javascript:show_graph('smokedchicken')"> </td>
+<td> 1200 </td>
+<td> 3080 </td>
+<td> <img src="green_light.png" class="resize128h" > </td> <td> no block in effect</td>
+
+</tr> 
+<tr>
+<td>25</td>
+<td>WizardsOfDos</td>
+<td>    <img src="flags/flag_germany.png" alt="Germany"  title="Germany"  class="resize128h"> </td> 
+
+<td> <img src="flags/team_108_flag.png"  title = "click to see history" class="resize128h" onclick="javascript:show_graph('wizardsofdos')"> </td>
+<td> 1200 </td>
+<td> 1624 </td>
+<td> <img src="green_light.png" class="resize128h" > </td> <td> no block in effect</td>
+
+</tr> 
+<tr>
+<td>25</td>
+<td>select random name</td>
+<td>    <img src="flags/flag_usa.png" alt="United States"  title="United States"  class="resize128h"> </td> 
+
+<td> <img src="flags/team_124_flag.png"  title = "click to see history" class="resize128h" onclick="javascript:show_graph('select_random_name')"> </td>
+<td> 1200 </td>
+<td> 548 </td>
+<td> <img src="green_light.png" class="resize128h" > </td> <td> no block in effect</td>
+
+</tr> 
+<tr>
+<td>28</td>
+<td>secD</td>
+<td>    <img src="flags/flag_usa.png" alt="United States"  title="United States"  class="resize128h"> </td> 
+
+<td> <img src="flags/team_116_flag.png"  title = "click to see history" class="resize128h" onclick="javascript:show_graph('secd')"> </td>
+<td> 900 </td>
+<td> 3802 </td>
+<td> <img src="green_light.png" class="resize128h" > </td> <td> no block in effect</td>
+
+</tr> 
+<tr>
+<td>28</td>
+<td>WCSC</td>
+<td>    <img src="flags/flag_usa.png" alt="United States"  title="United States"  class="resize128h"> </td> 
+
+<td> <img src="flags/team_126_flag.png"  title = "click to see history" class="resize128h" onclick="javascript:show_graph('wcsc')"> </td>
+<td> 900 </td>
+<td> 2128 </td>
+<td> <img src="green_light.png" class="resize128h" > </td> <td> no block in effect</td>
+
+</tr> 
+<tr>
+<td>30</td>
+<td>Bushwhackers</td>
+<td>    <img src="flags/flag_russia.png" alt="Russian Federation"  title="Russian Federation"  class="resize128h"> </td> 
+
+<td> <img src="flags/team_146_flag.png"  title = "click to see history" class="resize128h" onclick="javascript:show_graph('bushwhackers')"> </td>
+<td> 600 </td>
+<td> 2900 </td>
+<td> <img src="green_light.png" class="resize128h" > </td> <td> no block in effect</td>
+
+</tr> 
+<tr>
+<td>30</td>
+<td>Brooklynt Overflow</td>
+<td>    <img src="flags/flag_usa.png" alt="United States"  title="United States"  class="resize128h"> </td> 
+
+<td> <img src="flags/team_110_flag.png"  title = "click to see history" class="resize128h" onclick="javascript:show_graph('brooklynt_overflow')"> </td>
+<td> 600 </td>
+<td> 2183 </td>
+<td> <img src="green_light.png" class="resize128h" > </td> <td> no block in effect</td>
+
+</tr> 
+<tr>
+<td>32</td>
+<td>The Maple Menace</td>
+<td>    <img src="flags/flag_canada.png" alt="Canada"  title="Canada"  class="resize128h"> </td> 
+
+<td> <img src="flags/team_150_flag.png"  title = "click to see history" class="resize128h" onclick="javascript:show_graph('the_maple_menace')"> </td>
+<td> 300 </td>
+<td> 3390 </td>
+<td> <img src="green_light.png" class="resize128h" > </td> <td> no block in effect</td>
+
+</tr> 
+<tr>
+<td>32</td>
+<td>RPISEC</td>
+<td>    <img src="flags/flag_usa.png" alt="United States"  title="United States"  class="resize128h"> </td> 
+
+<td> <img src="flags/team_122_flag.png"  title = "click to see history" class="resize128h" onclick="javascript:show_graph('rpisec')"> </td>
+<td> 300 </td>
+<td> 2750 </td>
+<td> <img src="green_light.png" class="resize128h" > </td> <td> no block in effect</td>
+
+</tr> 
+<tr>
+<td>32</td>
+<td>funny h@Xors</td>
+<td>    <img src="flags/flag_austria.png" alt="Austria"  title="Austria"  class="resize128h"> </td> 
+
+<td> <img src="flags/team_153_flag.png"  title = "click to see history" class="resize128h" onclick="javascript:show_graph('funny_h_xors')"> </td>
+<td> 300 </td>
+<td> 2047 </td>
+<td> <img src="green_light.png" class="resize128h" > </td> <td> no block in effect</td>
+
+</tr> 
+<tr>
+<td>32</td>
+<td>Red Cops</td>
+<td>    <img src="flags/flag_france.png" alt="France"  title="France"  class="resize128h"> </td> 
+
+<td> <img src="flags/team_111_flag.png"  title = "click to see history" class="resize128h" onclick="javascript:show_graph('red_cops')"> </td>
+<td> 300 </td>
+<td> 1531 </td>
+<td> <img src="green_light.png" class="resize128h" > </td> <td> no block in effect</td>
+
+</tr> 
+<tr>
+<td>36</td>
+<td>Tower Of Hanoi</td>
+<td>    <img src="flags/flag_italy.png" alt="Italy"  title="Italy"  class="resize128h"> </td> 
+
+<td> <img src="flags/team_109_flag.png"  title = "click to see history" class="resize128h" onclick="javascript:show_graph('tower_of_hanoi')"> </td>
+<td> 0 </td>
+<td> 4242 </td>
+<td> <img src="green_light.png" class="resize128h" > </td> <td> no block in effect</td>
+
+</tr> 
+<tr>
+<td>36</td>
+<td>gn00bz</td>
+<td>    <img src="flags/flag_croatia.png" alt="Croatia"  title="Croatia"  class="resize128h"> </td> 
+
+<td> <img src="flags/team_158_flag.png"  title = "click to see history" class="resize128h" onclick="javascript:show_graph('gn00bz')"> </td>
+<td> 0 </td>
+<td> 4200 </td>
+<td> <img src="green_light.png" class="resize128h" > </td> <td> no block in effect</td>
+
+</tr> 
+<tr>
+<td>36</td>
+<td>Stoned Brook</td>
+<td>    <img src="flags/flag_usa.png" alt="United States"  title="United States"  class="resize128h"> </td> 
+
+<td> <img src="flags/team_167_flag.png"  title = "click to see history" class="resize128h" onclick="javascript:show_graph('stoned_brook')"> </td>
+<td> 0 </td>
+<td> 3600 </td>
+<td> <img src="green_light.png" class="resize128h" > </td> <td> no block in effect</td>
+
+</tr> 
+<tr>
+<td>36</td>
+<td>int80</td>
+<td>    <img src="flags/flag_usa.png" alt="United States"  title="United States"  class="resize128h"> </td> 
+
+<td> <img src="flags/team_140_flag.png"  title = "click to see history" class="resize128h" onclick="javascript:show_graph('int80')"> </td>
+<td> 0 </td>
+<td> 3480 </td>
+<td> <img src="green_light.png" class="resize128h" > </td> <td> no block in effect</td>
+
+</tr> 
+<tr>
+<td>36</td>
+<td>blue-lotus</td>
+<td>    <img src="flags/flag_china.png" alt="China"  title="China"  class="resize128h"> </td> 
+
+<td> <img src="flags/team_163_flag.png"  title = "click to see history" class="resize128h" onclick="javascript:show_graph('blue_lotus')"> </td>
+<td> 0 </td>
+<td> 3210 </td>
+<td> <img src="green_light.png" class="resize128h" > </td> <td> no block in effect</td>
+
+</tr> 
+<tr>
+<td>36</td>
+<td>THC - Twente Hacker Club</td>
+<td>    <img src="flags/flag_netherlands.png" alt="Netherlands"  title="Netherlands"  class="resize128h"> </td> 
+
+<td> <img src="flags/team_121_flag.png"  title = "click to see history" class="resize128h" onclick="javascript:show_graph('thc_twente_hacker_club')"> </td>
+<td> 0 </td>
+<td> 3200 </td>
+<td> <img src="green_light.png" class="resize128h" > </td> <td> no block in effect</td>
+
+</tr> 
+<tr>
+<td>36</td>
+<td>WildRide</td>
+<td>    <img src="flags/flag_russia.png" alt="Russian Federation"  title="Russian Federation"  class="resize128h"> </td> 
+
+<td> <img src="flags/team_147_flag.png"  title = "click to see history" class="resize128h" onclick="javascript:show_graph('wildride')"> </td>
+<td> 0 </td>
+<td> 2900 </td>
+<td> <img src="green_light.png" class="resize128h" > </td> <td> no block in effect</td>
+
+</tr> 
+<tr>
+<td>36</td>
+<td>VLGU</td>
+<td>    <img src="flags/flag_russia.png" alt="Russian Federation"  title="Russian Federation"  class="resize128h"> </td> 
+
+<td> <img src="flags/team_138_flag.png"  title = "click to see history" class="resize128h" onclick="javascript:show_graph('vlgu')"> </td>
+<td> 0 </td>
+<td> 2900 </td>
+<td> <img src="green_light.png" class="resize128h" > </td> <td> no block in effect</td>
+
+</tr> 
+<tr>
+<td>36</td>
+<td>kernelsanders</td>
+<td>    <img src="flags/flag_usa.png" alt="United States"  title="United States"  class="resize128h"> </td> 
+
+<td> <img src="flags/team_125_flag.png"  title = "click to see history" class="resize128h" onclick="javascript:show_graph('kernelsanders')"> </td>
+<td> 0 </td>
+<td> 2900 </td>
+<td> <img src="green_light.png" class="resize128h" > </td> <td> no block in effect</td>
+
+</tr> 
+<tr>
+<td>36</td>
+<td>Magic Hat</td>
+<td>    <img src="flags/flag_russia.png" alt="Russian Federation"  title="Russian Federation"  class="resize128h"> </td> 
+
+<td> <img src="flags/team_171_flag.png"  title = "click to see history" class="resize128h" onclick="javascript:show_graph('magic_hat')"> </td>
+<td> 0 </td>
+<td> 2800 </td>
+<td> <img src="green_light.png" class="resize128h" > </td> <td> no block in effect</td>
+
+</tr> 
+<tr>
+<td>36</td>
+<td>UFOlogists</td>
+<td>    <img src="flags/flag_russia.png" alt="Russian Federation"  title="Russian Federation"  class="resize128h"> </td> 
+
+<td> <img src="flags/team_136_flag.png"  title = "click to see history" class="resize128h" onclick="javascript:show_graph('ufologists')"> </td>
+<td> 0 </td>
+<td> 2780 </td>
+<td> <img src="green_light.png" class="resize128h" > </td> <td> no block in effect</td>
+
+</tr> 
+<tr>
+<td>36</td>
+<td>PwnDevils</td>
+<td>    <img src="flags/flag_usa.png" alt="United States"  title="United States"  class="resize128h"> </td> 
+
+<td> <img src="flags/team_154_flag.png"  title = "click to see history" class="resize128h" onclick="javascript:show_graph('pwndevils')"> </td>
+<td> 0 </td>
+<td> 2700 </td>
+<td> <img src="green_light.png" class="resize128h" > </td> <td> no block in effect</td>
+
+</tr> 
+<tr>
+<td>36</td>
+<td>UC Lions</td>
+<td>    <img src="flags/flag_usa.png" alt="United States"  title="United States"  class="resize128h"> </td> 
+
+<td> <img src="flags/team_106_flag.png"  title = "click to see history" class="resize128h" onclick="javascript:show_graph('uc_lions')"> </td>
+<td> 0 </td>
+<td> 2502 </td>
+<td> <img src="green_light.png" class="resize128h" > </td> <td> no block in effect</td>
+
+</tr> 
+<tr>
+<td>36</td>
+<td>I am a test team!</td>
+<td>    <img src="flags/flag_usa.png" alt="USA"  title="USA"  class="resize128h"> </td> 
+
+<td> <img src="flags/team_100_flag.png"  title = "click to see history" class="resize128h" onclick="javascript:show_graph('test')"> </td>
+<td> 0 </td>
+<td> 2471 </td>
+<td> <img src="green_light.png" class="resize128h" > </td> <td> no block in effect</td>
+
+</tr> 
+<tr>
+<td>36</td>
+<td>SCDT</td>
+<td>    <img src="flags/flag_usa.png" alt="United States"  title="United States"  class="resize128h"> </td> 
+
+<td> <img src="flags/team_130_flag.png"  title = "click to see history" class="resize128h" onclick="javascript:show_graph('scdt')"> </td>
+<td> 0 </td>
+<td> 2300 </td>
+<td> <img src="green_light.png" class="resize128h" > </td> <td> no block in effect</td>
+
+</tr> 
+<tr>
+<td>36</td>
+<td>InVaR</td>
+<td>    <img src="flags/flag_russia.png" alt="Russian Federation"  title="Russian Federation"  class="resize128h"> </td> 
+
+<td> <img src="flags/team_157_flag.png"  title = "click to see history" class="resize128h" onclick="javascript:show_graph('invar')"> </td>
+<td> 0 </td>
+<td> 2200 </td>
+<td> <img src="green_light.png" class="resize128h" > </td> <td> no block in effect</td>
+
+</tr> 
+<tr>
+<td>36</td>
+<td>bi0s</td>
+<td>    <img src="flags/flag_india.png" alt="India"  title="India"  class="resize128h"> </td> 
+
+<td> <img src="flags/team_134_flag.png"  title = "click to see history" class="resize128h" onclick="javascript:show_graph('bi0s')"> </td>
+<td> 0 </td>
+<td> 2100 </td>
+<td> <img src="green_light.png" class="resize128h" > </td> <td> no block in effect</td>
+
+</tr> 
+<tr>
+<td>36</td>
+<td>Graham`s Crackers</td>
+<td>    <img src="flags/flag_usa.png" alt="United States"  title="United States"  class="resize128h"> </td> 
+
+<td> <img src="flags/team_115_flag.png"  title = "click to see history" class="resize128h" onclick="javascript:show_graph('graham_s_crackers')"> </td>
+<td> 0 </td>
+<td> 2020 </td>
+<td> <img src="green_light.png" class="resize128h" > </td> <td> no block in effect</td>
+
+</tr> 
+<tr>
+<td>36</td>
+<td>hackmen</td>
+<td>    <img src="flags/flag_uk.png" alt="United Kingdom"  title="United Kingdom"  class="resize128h"> </td> 
+
+<td> <img src="flags/team_169_flag.png"  title = "click to see history" class="resize128h" onclick="javascript:show_graph('hackmen')"> </td>
+<td> 0 </td>
+<td> 2000 </td>
+<td> <img src="green_light.png" class="resize128h" > </td> <td> no block in effect</td>
+
+</tr> 
+<tr>
+<td>36</td>
+<td>49SD</td>
+<td>    <img src="flags/flag_usa.png" alt="United States"  title="United States"  class="resize128h"> </td> 
+
+<td> <img src="flags/team_141_flag.png"  title = "click to see history" class="resize128h" onclick="javascript:show_graph('49sd')"> </td>
+<td> 0 </td>
+<td> 1950 </td>
+<td> <img src="green_light.png" class="resize128h" > </td> <td> no block in effect</td>
+
+</tr> 
+<tr>
+<td>36</td>
+<td>SYNners</td>
+<td>    <img src="flags/flag_usa.png" alt="United States"  title="United States"  class="resize128h"> </td> 
+
+<td> <img src="flags/team_164_flag.png"  title = "click to see history" class="resize128h" onclick="javascript:show_graph('synners')"> </td>
+<td> 0 </td>
+<td> 1900 </td>
+<td> <img src="green_light.png" class="resize128h" > </td> <td> no block in effect</td>
+
+</tr> 
+<tr>
+<td>36</td>
+<td>f0gd0gs</td>
+<td>    <img src="flags/flag_usa.png" alt="United States"  title="United States"  class="resize128h"> </td> 
+
+<td> <img src="flags/team_104_flag.png"  title = "click to see history" class="resize128h" onclick="javascript:show_graph('f0gd0gs')"> </td>
+<td> 0 </td>
+<td> 1744 </td>
+<td> <img src="green_light.png" class="resize128h" > </td> <td> no block in effect</td>
+
+</tr> 
+<tr>
+<td>36</td>
+<td>SYPER</td>
+<td>    <img src="flags/flag_argentina.png" alt="Argentina"  title="Argentina"  class="resize128h"> </td> 
+
+<td> <img src="flags/team_103_flag.png"  title = "click to see history" class="resize128h" onclick="javascript:show_graph('syper')"> </td>
+<td> 0 </td>
+<td> 1741 </td>
+<td> <img src="green_light.png" class="resize128h" > </td> <td> no block in effect</td>
+
+</tr> 
+<tr>
+<td>36</td>
+<td>le herp derp</td>
+<td>    <img src="flags/flag_usa.png" alt="United States"  title="United States"  class="resize128h"> </td> 
+
+<td> <img src="flags/team_162_flag.png"  title = "click to see history" class="resize128h" onclick="javascript:show_graph('le_herp_derp')"> </td>
+<td> 0 </td>
+<td> 1627 </td>
+<td> <img src="green_light.png" class="resize128h" > </td> <td> no block in effect</td>
+
+</tr> 
+<tr>
+<td>36</td>
+<td>Cheddar Horsemen</td>
+<td>    <img src="flags/flag_australia.png" alt="Australia"  title="Australia"  class="resize128h"> </td> 
+
+<td> <img src="flags/team_145_flag.png"  title = "click to see history" class="resize128h" onclick="javascript:show_graph('cheddar_horsemen')"> </td>
+<td> 0 </td>
+<td> 1515 </td>
+<td> <img src="green_light.png" class="resize128h" > </td> <td> no block in effect</td>
+
+</tr> 
+<tr>
+<td>36</td>
+<td>Hackus-UDeS</td>
+<td>    <img src="flags/flag_canada.png" alt="Canada"  title="Canada"  class="resize128h"> </td> 
+
+<td> <img src="flags/team_159_flag.png"  title = "click to see history" class="resize128h" onclick="javascript:show_graph('hackus_udes')"> </td>
+<td> 0 </td>
+<td> 1400 </td>
+<td> <img src="green_light.png" class="resize128h" > </td> <td> no block in effect</td>
+
+</tr> 
+<tr>
+<td>36</td>
+<td>in23canation</td>
+<td>    <img src="flags/flag_germany.png" alt="Germany"  title="Germany"  class="resize128h"> </td> 
+
+<td> <img src="flags/team_135_flag.png"  title = "click to see history" class="resize128h" onclick="javascript:show_graph('in23canation')"> </td>
+<td> 0 </td>
+<td> 1123 </td>
+<td> <img src="green_light.png" class="resize128h" > </td> <td> no block in effect</td>
+
+</tr> 
+<tr>
+<td>36</td>
+<td>0x909090</td>
+<td>    <img src="flags/flag_usa.png" alt="United States"  title="United States"  class="resize128h"> </td> 
+
+<td> <img src="flags/team_161_flag.png"  title = "click to see history" class="resize128h" onclick="javascript:show_graph('0x909090')"> </td>
+<td> 0 </td>
+<td> 1050 </td>
+<td> <img src="green_light.png" class="resize128h" > </td> <td> no block in effect</td>
+
+</tr> 
+<tr>
+<td>36</td>
+<td>[censored]</td>
+<td>    <img src="flags/flag_russia.png" alt="Russian Federation"  title="Russian Federation"  class="resize128h"> </td> 
+
+<td> <img src="flags/team_160_flag.png"  title = "click to see history" class="resize128h" onclick="javascript:show_graph('_censored_')"> </td>
+<td> 0 </td>
+<td> 1000 </td>
+<td> <img src="green_light.png" class="resize128h" > </td> <td> no block in effect</td>
+
+</tr> 
+<tr>
+<td>36</td>
+<td>smallbitmap</td>
+<td>    <img src="flags/flag_russia.png" alt="Russian Federation"  title="Russian Federation"  class="resize128h"> </td> 
+
+<td> <img src="flags/team_139_flag.png"  title = "click to see history" class="resize128h" onclick="javascript:show_graph('smallbitmap')"> </td>
+<td> 0 </td>
+<td> 1000 </td>
+<td> <img src="green_light.png" class="resize128h" > </td> <td> no block in effect</td>
+
+</tr> 
+<tr>
+<td>36</td>
+<td>Hack Club</td>
+<td>    <img src="flags/flag_russia.png" alt="Russian Federation"  title="Russian Federation"  class="resize128h"> </td> 
+
+<td> <img src="flags/team_168_flag.png"  title = "click to see history" class="resize128h" onclick="javascript:show_graph('hack_club')"> </td>
+<td> 0 </td>
+<td> 1000 </td>
+<td> <img src="green_light.png" class="resize128h" > </td> <td> no block in effect</td>
+
+</tr> 
+<tr>
+<td>36</td>
+<td>Bkitsek</td>
+<td>    <img src="flags/flag_vietnam.png" alt="Viet Nam"  title="Viet Nam"  class="resize128h"> </td> 
+
+<td> <img src="flags/team_172_flag.png"  title = "click to see history" class="resize128h" onclick="javascript:show_graph('bkitsek')"> </td>
+<td> 0 </td>
+<td> 1000 </td>
+<td> <img src="green_light.png" class="resize128h" > </td> <td> no block in effect</td>
+
+</tr> 
+<tr>
+<td>36</td>
+<td>Galvao</td>
+<td>    <img src="flags/flag_brazil.png" alt="Brazil"  title="Brazil"  class="resize128h"> </td> 
+
+<td> <img src="flags/team_133_flag.png"  title = "click to see history" class="resize128h" onclick="javascript:show_graph('galvao')"> </td>
+<td> 0 </td>
+<td> 975 </td>
+<td> <img src="green_light.png" class="resize128h" > </td> <td> no block in effect</td>
+
+</tr> 
+<tr>
+<td>36</td>
+<td>Leet More</td>
+<td>    <img src="flags/flag_russia.png" alt="Russian Federation"  title="Russian Federation"  class="resize128h"> </td> 
+
+<td> <img src="flags/team_144_flag.png"  title = "click to see history" class="resize128h" onclick="javascript:show_graph('leet_more')"> </td>
+<td> 0 </td>
+<td> 644 </td>
+<td> <img src="green_light.png" class="resize128h" > </td> <td> no block in effect</td>
+
+</tr> 
+<tr>
+<td>36</td>
+<td>Wildcats</td>
+<td>    <img src="flags/flag_usa.png" alt="United States"  title="United States"  class="resize128h"> </td> 
+
+<td> <img src="flags/team_165_flag.png"  title = "click to see history" class="resize128h" onclick="javascript:show_graph('wildcats')"> </td>
+<td> 0 </td>
+<td> 400 </td>
+<td> <img src="green_light.png" class="resize128h" > </td> <td> no block in effect</td>
+
+</tr> 
+<tr>
+<td>36</td>
+<td>PeterPEN</td>
+<td>    <img src="flags/flag_russia.png" alt="Russian Federation"  title="Russian Federation"  class="resize128h"> </td> 
+
+<td> <img src="flags/team_170_flag.png"  title = "click to see history" class="resize128h" onclick="javascript:show_graph('peterpen')"> </td>
+<td> 0 </td>
+<td> 300 </td>
+<td> <img src="green_light.png" class="resize128h" > </td> <td> no block in effect</td>
+
+</tr> 
+<tr>
+<td>72</td>
+<td>KEVA</td>
+<td>    <img src="flags/flag_russia.png" alt="Russian Federation"  title="Russian Federation"  class="resize128h"> </td> 
+
+<td> <img src="flags/team_119_flag.png"  title = "click to see history" class="resize128h" onclick="javascript:show_graph('keva')"> </td>
+<td> -900 </td>
+<td> 1810 </td>
+<td> <img src="green_light.png" class="resize128h" > </td> <td> no block in effect</td>
+
+</tr> 
+<tr>
+<td>73</td>
+<td>Take Over The World</td>
+<td>    <img src="flags/flag_brazil.png" alt="Brazil"  title="Brazil"  class="resize128h"> </td> 
+
+<td> <img src="flags/team_128_flag.png"  title = "click to see history" class="resize128h" onclick="javascript:show_graph('take_over_the_world')"> </td>
+<td> -3300 </td>
+<td> 323 </td>
+<td> <img src="green_light.png" class="resize128h" > </td> <td> no block in effect</td>
+
+</tr> 
+</table>
+</div>
+<div class="graph_div" id="graph-part">
+<div id="container" style="width: 100%; height: 400px"></div>
+</div>
+</body>
+</html>

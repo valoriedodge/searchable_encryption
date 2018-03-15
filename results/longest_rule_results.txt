@@ -1,0 +1,96 @@
+*******************************************************************
+Token Size 4 
+The number of rejected rules: 4 
+
+nytimes.txt
+The number of matched data characters: 168571 
+The percent of matched characters: 65.32 
+
+cnn.txt
+The number of matched data characters: 96533 
+The percent of matched characters: 54.57 
+
+wsj.txt
+The number of matched data characters: 483581 
+The percent of matched characters: 45.96 
+
+*******************************************************************
+Token Size 5 
+The number of rejected rules: 13 
+
+nytimes.txt
+The number of matched data characters: 123515 
+The percent of matched characters: 47.86 
+
+cnn.txt
+The number of matched data characters: 62894 
+The percent of matched characters: 35.55 
+
+wsj.txt
+The number of matched data characters: 311514 
+The percent of matched characters: 29.61 
+
+*******************************************************************
+Token Size 6 
+The number of rejected rules: 28 
+
+nytimes.txt
+The number of matched data characters: 102657 
+The percent of matched characters: 39.78 
+
+cnn.txt
+The number of matched data characters: 41619 
+The percent of matched characters: 23.53 
+
+wsj.txt
+The number of matched data characters: 189115 
+The percent of matched characters: 17.97 
+
+*******************************************************************
+Token Size 7 
+The number of rejected rules: 47 
+
+nytimes.txt
+The number of matched data characters: 89274 
+The percent of matched characters: 34.59 
+
+cnn.txt
+The number of matched data characters: 26907 
+The percent of matched characters: 15.21 
+
+wsj.txt
+The number of matched data characters: 132358 
+The percent of matched characters: 12.58 
+
+*******************************************************************
+Token Size 8 
+The number of rejected rules: 74 
+
+nytimes.txt
+The number of matched data characters: 28623 
+The percent of matched characters: 11.09 
+
+cnn.txt
+The number of matched data characters: 13070 
+The percent of matched characters: 7.39 
+
+wsj.txt
+The number of matched data characters: 96731 
+The percent of matched characters: 9.19 
+
+*******************************************************************
+Token Size 9 
+The number of rejected rules: 102 
+
+nytimes.txt
+The number of matched data characters: 4280 
+The percent of matched characters: 1.66 
+
+cnn.txt
+The number of matched data characters: 11106 
+The percent of matched characters: 6.28 
+
+wsj.txt
+The number of matched data characters: 51248 
+The percent of matched characters: 4.87 
+
