@@ -56,28 +56,6 @@ def countLongestRuleLengths(rule_path):
 	    
 	return grouped_counts
 
-# #Split a given string into all of it's n-sized tokens
-# def tokenizeString(input_string, n):
-# 	arr = []
-# 	length = len(input_string)
-#  	for i in range(length):
-#  		if (i+n <= length):
-#  			arr.append((input_string[i:i+n]))
-#  	return arr
-
-# #Split all of the content rules into each of their n-sized tokens- also track which rules are rejected on account of being smaller than n
-# def tokenizeRuleset(rule_path, num):
-# 	ruleset = getRules(rule_path)
-# 	rejectedRules = []
-# 	rule_tokens = set()
-# 	for rule in ruleset:
-# 		if (len(rule) < num):
-# 			rejectedRules.append(rule)
-# 			continue
-# 		rule_substrings = tokenizeString(rule, num)
-# 		rule_tokens.update(rule_substrings)
-# 	return [rule_tokens, rejectedRules]
-
 
 #Incorparate all of the methods to return effectiveness of rule detection
 with open("newrules.txt", "wt") as f:

@@ -1,19 +1,14 @@
-##Check for each rule token, using sliding token to create rules.
-
-#Check to see if any rule token matches a given token from the data
-def tokenInRules(datatoken, ruleset):
-	dataset = set()
-	dataset.add(datatoken)
-	combine_set = dataset & ruleset
-	return len(combine_set) > 0
+##Check for each token in the data set, creating end-to-end rule tokens.
 
 #Split a given string into all of it's n-sized tokens
 def tokenizeString(input_string, n):
 	arr = []
 	length = len(input_string)
- 	for i in range(length):
- 		if (i+n <= length):
- 			arr.append((input_string[i:i+n]))
+	remain = length % n
+	for i in range(0, length-remain, n):
+		arr.append((input_string[i:i+n]))
+	if remain > 0:
+		arr.append(input_string[-n:])
  	return arr
 
 #Parse through IDS rules from given path to find content rules
@@ -31,7 +26,6 @@ def getRules(rule_path):
 #Split all of the content rules into each of their n-sized tokens- also track which rules are rejected on account of being smaller than n
 def tokenizeRuleset(rule_path, num):
 	ruleset = getRules(rule_path)
-	print(len(ruleset))
 	rejectedRules = []
 	rule_tokens = set()
 	for rule in ruleset:
@@ -40,17 +34,7 @@ def tokenizeRuleset(rule_path, num):
 			continue
 		rule_substrings = tokenizeString(rule, num)
 		rule_tokens.update(rule_substrings)
-	# print(rejectedRules)
 	return [rule_tokens, rejectedRules]
-
-#Given a path to a data file, split all of the data into n-sized tokens
-def tokenizeData(data_path, num):
-	data = open(data_path, "r")
-	dataset = []
-	for line in data:
-		datatokens = tokenizeString(line, num)
-		dataset.append(datatokens)
-	return dataset
 
 #Given a path to a data file, creates array of all of the n-sized tokens that match IDS rule tokens and an array of all of the tokens that do not.
 def matchedData(data_path, num, rule_tokens):
@@ -59,32 +43,16 @@ def matchedData(data_path, num, rule_tokens):
 	b = [False] * len(dataset)
 	for i in range(len(dataset)):
 		datatoken = dataset[i:i+num]
-		if tokenInRules(datatoken, rule_tokens):
+		if (datatoken in rule_tokens):
 			for j in range(i,i+num):
 				b[j] = True
 	return sum(b)
 
-def tokenizeLongestRules(rule_path, num):
-	ruleset = getContentRulesList(rule_path)
-	rejectedRules = []
-	rule_tokens = set()
-	for rule in ruleset:
-		longest = rule[0]
-		for x in rule:
-			if len(x) > len(longest):
-				longest = x
-		if (len(longest) < num):
-			rejectedRules.append(longest)
-			continue
-		rule_substrings = tokenizeString(rule, num)
-		rule_tokens.update(rule_substrings)
-	print(rejectedRules)
-	return [rule_tokens, rejectedRules]
 
 #Incorparate all of the methods to return effectiveness of rule detection
-tokenSizes = [4,5,6,7,8, 9, 10,11,12]
+tokenSizes = [4,5,6,7,8,9,10,11,12]
 testDataSets = ["nytimes.txt", "cnn.txt", "wsj.txt"]
-with open("boolresults2.txt", "wt") as writeFile:
+with open("new_overlap_rule_results.txt", "wt") as writeFile:
 	for num in tokenSizes:
 		rule_results = tokenizeRuleset("http_rules.txt", num)
 		rule_tokens = rule_results[0]
@@ -98,7 +66,6 @@ with open("boolresults2.txt", "wt") as writeFile:
 			dataFile = open(data, "r")
 			datastring = dataFile.read()
 			writeFile.write("\n")
-			writeFile.write("The number data characters: %d \n" %len(datastring))
 			writeFile.write("The number of matched data characters: %d \n" %results)
 			percent = (100.0 * results)/len(datastring)
 			writeFile.write("%.2f \n\n" %percent)
